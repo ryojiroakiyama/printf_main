@@ -67,8 +67,13 @@ int main(void)
 	put("%*.*d , 10, -3", 123, ret);
 	ret = printf("%*.*d", -10, 5, 123);
 	put("%*.*d , -10, 5", 123, ret);
+	ret = printf("%-*.*d", -10, 5, 123);
+	put("%-*.*d ,-10, 5", 123, ret);
 	ret = printf("%*d", 0, 123);
 	put("%*d , 0", 123, ret);
+	
+	ret = printf("abc%010dabc", 123);
+	put("abc%010dabc", 123, ret);
 
 	//error
 //	ret = printf("%-010.5d", 123);
@@ -89,6 +94,8 @@ int main(void)
 	//%%
 	//pointer function
 	//guwakamoredejikkenn
+	//enum
+	//test
 
 	return (0);
 }
