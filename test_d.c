@@ -64,6 +64,7 @@ int main(void)
 //	ret = printf("%*.*d", -----10, 5, 123);
 //	ret = printf("%$)0#$", 123);
 //	ret = printf("%.~d", 123);
+//	ret = printf("%**d\n", 5, 123);
 
 	//use the ret of write to ret of printf?
 	//%%
