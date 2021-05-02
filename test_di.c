@@ -76,7 +76,8 @@ int main(void)
 	put("abc%010dabc", 123, ret);
 
 	//error
-//	ret = printf("%-010.5d", 123);
+//	ret = printf("%-010.5d", 123);//compile said ignore one of flag
+//	ret = printf("%0-10.5d", 123);
 //	ret = printf("%-----5----10.5d", 123);
 //	ret = printf("%.-4d", 123);	
 //	ret = printf("%*.*d", -----10, 5, 123);

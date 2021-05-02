@@ -16,7 +16,7 @@ int main(void)
 	ret = printf("%c", 'x');
 	put("%c", 'x', ret);
 
-	ret = printf("%.c", 'x');
+	ret = printf("%.c", 'x');//?
 	put("%.c", 'x', ret);
 
 	ret = printf("%1c", 'x');
@@ -51,8 +51,6 @@ int main(void)
 //	ret = printf("%.0c", 'x');
 //	ret = printf("%.1c", 'x');
 //	ret = printf("%..c", 'x');
-//	ret = printf("%.*c", -1, 0);
-//	ret = printf("%*c", -------5, 'x');
 
 	return (0);
 }
