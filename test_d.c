@@ -90,12 +90,5 @@ int main(void)
 //	ret = printf("adsf", 123);
 //	ret = printf("%.-5d", 123);
 
-	//use the ret of write to ret of printf?
-	//%%
-	//pointer function
-	//guwakamoredejikkenn
-	//enum
-	//test
-
 	return (0);
 }
