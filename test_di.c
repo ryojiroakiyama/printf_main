@@ -6,9 +6,7 @@ void put(char *s, int nb, int ret)
 	printf("%s, %d\n", s, nb);
 	printf("ret=%d\n", ret);
 	printf("--------\n");
-}
-
-int main(void)
+} int main(void)
 {
 	int ret;
 
@@ -90,6 +88,7 @@ int main(void)
 //	ret = printf("%", 123);
 //	ret = printf("adsf", 123);
 //	ret = printf("%.-5d", 123);
+//	ret = printf("%10*.42d", 5, 123);
 
 	return (0);
 }
