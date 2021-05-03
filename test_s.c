@@ -67,6 +67,9 @@ int main(void)
 	ret = printf("");
 	put("\"\"", "", ret);
 
+	ret = printf("%10%");
+	put("\"%10%\"", "%10%", ret);
+
 	//error
 //	ret = printf("%0s", "ryojiro");//recognized as flag 0 and flag 0 is undefined
 //	ret = printf("%010.5s", "ryojiro");

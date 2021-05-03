@@ -28,6 +28,8 @@ void put(char *s, int nb, int ret)
 	put("%.3d", 123, ret);
 	ret = printf("%.5d", 123);
 	put("%.5d", 123, ret);
+	ret = printf("%.0005d", 123);
+	put("%.0005d", 123, ret);
 
 	ret = printf("%0d", 0);
 	put("%0d", 0, ret);
@@ -89,6 +91,7 @@ void put(char *s, int nb, int ret)
 //	ret = printf("adsf", 123);
 //	ret = printf("%.-5d", 123);
 //	ret = printf("%10*.42d", 5, 123);
+//	ret = printf("%10.5", 123);
 
 	return (0);
 }
