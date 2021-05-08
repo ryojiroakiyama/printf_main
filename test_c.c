@@ -16,7 +16,7 @@ int main(void)
 	ret = printf("%c", 'x');
 	put("%c", 'x', ret);
 
-	ret = printf("%.c", 'x');//?
+	ret = printf("%.c", 'x');
 	put("%.c", 'x', ret);
 
 	ret = printf("%1c", 'x');
@@ -45,12 +45,21 @@ int main(void)
 	put("abc%%%%%%%10cabc", 'x', ret);
 
 	//error
-//	ret = printf("%0c", 0);//pc recognize as flag 0 and flag 0 is undefined
-//	ret = printf("%010c", 'x');
-//	ret = printf("%.5c", 'x');//precision undefined
-//	ret = printf("%.0c", 'x');
-//	ret = printf("%.1c", 'x');
-//	ret = printf("%..c", 'x');
+	printf("--------------------------warning\n");
+	ret = printf("%0c", 0);//pc recognize as flag 0 and flag 0 is undefined
+	put("%0c", 0, ret);
+	ret = printf("%010c", 'x');
+	put("%010c", 'x', ret);
+	ret = printf("%.5c", 'x');//precision undefined
+	put("%.5c", 'x', ret);
+	ret = printf("%.0c", 'x');
+	put("%.0c", 'x', ret);
+	ret = printf("%.1c", 'x');
+	put("%.1c", 'x', ret);
+	ret = printf("%..c", 'x');
+	put("%..c", 'x', ret);
+	ret = printf("%.*c", -5, 'x');
+	put("%.*c", -5, 'x');
 
 	return (0);
 }

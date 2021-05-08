@@ -6,7 +6,9 @@ void put(char *s, int nb, int ret)
 	printf("%s, %d\n", s, nb);
 	printf("ret=%d\n", ret);
 	printf("--------\n");
-} int main(void)
+} 
+
+int main(void)
 {
 	int ret;
 
@@ -38,6 +40,8 @@ void put(char *s, int nb, int ret)
 	ret = printf("%5d", 123);
 	put("%5d", 123, ret);
 
+	ret = printf("%10.d", 0);
+	put("%10.d", 0, ret);
 	ret = printf("%10.3d", 123);
 	put("%10.3d", 123, ret);
 	ret = printf("%10.5d", 123);
@@ -75,9 +79,80 @@ void put(char *s, int nb, int ret)
 	ret = printf("abc%010dabc", 123);
 	put("abc%010dabc", 123, ret);
 
+	ret = printf("%*dabc%*d", 10, 123, 10, 123);
+	
+	printf("-----------------minus\n");
+	ret = printf("%d", -123);
+	put("%d", -123, ret);
+
+	ret = printf("%.d", -123);
+	put("%.d", -123, ret);
+	ret = printf("%.d", 0);
+	put("%.d", 0, ret);
+	ret = printf("%.0d", 0);
+	put("%.0d", 0, ret);
+	ret = printf("%.0d", -1);
+	put("%.0d", -1, ret);
+	ret = printf("%.0d", -123);
+	put("%.0d", -123, ret);
+	ret = printf("%.3d", -123);
+	put("%.3d", -123, ret);
+	ret = printf("%.5d", -123);
+	put("%.5d", -123, ret);
+	ret = printf("%.0005d", -123);
+	put("%.0005d", -123, ret);
+
+	ret = printf("%0d", 0);
+	put("%0d", 0, ret);
+	ret = printf("%1d", -123);
+	put("%1d", -123, ret);
+	ret = printf("%5d", -123);
+	put("%5d", -123, ret);
+
+	ret = printf("%10.3d", -123);
+	put("%10.3d", -123, ret);
+	ret = printf("%10.5d", -123);
+	put("%10.5d", -123, ret);
+	ret = printf("%10.15d", -123);
+	put("%10.15d", -123, ret);
+
+	ret = printf("%-10.5d", -123);
+	put("%-10.5d", -123, ret);
+	ret = printf("%------------10.5d", -123);
+	put("%------------10.5d", -123, ret);
+
+	ret = printf("%010d", -123);
+	put("%010d", -123, ret);
+	ret = printf("%010.d", -123);
+	put("%010.d", -123, ret);
+	ret = printf("%010.1d", -123);
+	put("%010.1d", -123, ret);
+	ret = printf("%010.5d", -123);
+	put("%010.5d", -123, ret);
+	ret = printf("%0000000000010.5d", -123);
+	put("%0000000000010.5d", -123, ret);
+	ret = printf("%010.5d", -123);
+	put("%010.5d", -123, ret);
+
+	ret = printf("%.*d", -1, 0);
+	put("%.*d , -1", 0, ret);
+	ret = printf("%*.*d", 10, -3, -123);
+	put("%*.*d , 10, -3", -123, ret);
+	ret = printf("%*.*d", -10, 5, -123);
+	put("%*.*d , -10, 5", -123, ret);
+	ret = printf("%-*.*d", -10, 5, -123);
+	put("%-*.*d ,-10, 5", -123, ret);
+	ret = printf("%*d", 0, -123);
+	put("%*d , 0", -123, ret);
+	
+	ret = printf("abc%010dabc", -123);
+	put("abc%010dabc", -123, ret);
+
 	//error
-//	ret = printf("%-010.5d", 123);//compile said ignore one of flag
-//	ret = printf("%0-10.5d", 123);
+	ret = printf("%-010.5d", 123);//compile said ignore one of flag
+	put("%-010.5d", 123, ret);
+	ret = printf("%0-10.5d", 123);
+	put("%0-10.5d", 123, ret);
 //	ret = printf("%-----5----10.5d", 123);
 //	ret = printf("%.-4d", 123);	
 //	ret = printf("%*.*d", -----10, 5, 123);

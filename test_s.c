@@ -52,6 +52,12 @@ int main(void)
 
 	ret = printf("%.*s", -1, str);
 	put("%.*s , -1", str, ret);
+	ret = printf("%.*s", 0, "ryojiro");
+	put("%.*s, 0", "ryojiro", ret);
+	ret = printf("%3s", str);
+	put("%3s", str, ret);
+	ret = printf("%3.3s", str);
+	put("%3.3s", str, ret);
 	ret = printf("%*.*s", 10, -3, "ryojiro");
 	put("%*.*s , 10, -3", "ryojiro", ret);
 	ret = printf("%*.*s", -10, 5, "ryojiro");
@@ -70,9 +76,9 @@ int main(void)
 	ret = printf("%10%");
 	put("\"%10%\"", "%10%", ret);
 
-	//error
-//	ret = printf("%0s", "ryojiro");//recognized as flag 0 and flag 0 is undefined
-//	ret = printf("%010.5s", "ryojiro");
+	//recognized as flag 0 and flag 0 is undefined but molminette test this
+	ret = printf("%0s", "ryojiro");
+	ret = printf("%010.5s", "ryojiro");
 
 	return (0);
 }
