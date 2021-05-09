@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../ft_printf.h"
 #include <stdio.h>
 
 #define TEST(args...)						\
@@ -31,7 +31,6 @@ int main(void)
 	TEST("%1d", 123);
 	TEST("%5d", 123);
 
-	printf("---------------------------\n");	
 	TEST("%10.d", 0);
 	TEST("%10.3d", 123);
 	TEST("%10.5d", 123);
@@ -56,6 +55,8 @@ int main(void)
 	TEST("abc%010dabc", 123);
 	TEST("a%010d%*db%-1dc", -5, -123, -5, -65);
 	
+	TEST("%0*.*d", 2, -2, 8);	
+	TEST("%0*.d", 2, 8);	
 	printf("-----------------d_minus\n");
 	TEST("%d", -123);
 
@@ -87,7 +88,6 @@ int main(void)
 	TEST("%*.*d", -10, 5, -123);
 	TEST("%-*.*d", -10, 5, -123);
 	TEST("%*d", 0, -123);
-	
 	TEST("abc%010dabc", -123);
 	TEST("a%010d%*db%-1dc", 5, 123, 5, 65);
 

@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../ft_printf.h"
 #include <stdio.h>
 
 #define TEST(args...)						\
@@ -49,6 +49,9 @@ int main(void)
 	TEST("abc%10.10sabc", "ryojiro");
 
 	TEST("");
+
+	TEST("%3.0s", str);
+	TEST("%10.0s", "ryojiro");
 
 //	TEST("%10%");
 

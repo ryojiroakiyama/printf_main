@@ -19,6 +19,8 @@ int main(void)
 
 	ret = printf("%.s", "ryojiro");
 	put("%.s", "ryojiro", ret);
+	ret = printf("%10.s", "ryojiro");
+	put("%10.s", "ryojiro", ret);
 	ret = printf("%.s", str);
 	put("%.s", str, ret);
 	ret = printf("%.0s", "ryojiro");
@@ -52,6 +54,8 @@ int main(void)
 
 	ret = printf("%.*s", -1, str);
 	put("%.*s , -1", str, ret);
+	ret = printf("%.*s", -1, "ryojiro");
+	put("%.*s , -1", "ryojiro", ret);
 	ret = printf("%.*s", 0, "ryojiro");
 	put("%.*s, 0", "ryojiro", ret);
 	ret = printf("%3s", str);
