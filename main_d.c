@@ -58,6 +58,7 @@ int main(void)
 	
 	TEST("%0*.*d", 2, -2, 8);	
 	TEST("%0*.d", 2, 8);	
+
 	printf("-----------------d_minus\n");
 	TEST("%d", -123);
 
@@ -95,6 +96,7 @@ int main(void)
 	TEST("%214748d", 123);
 	TEST("%.214748d", 123);
 	TEST("%*.*d", 214748, 214748, 123);
+	printf(0);
 */
 	printf("-------------------undefined behavior\n");
 	TEST("%-010.5d", 123);//compile said ignore one of flag

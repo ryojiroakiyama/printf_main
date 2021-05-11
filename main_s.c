@@ -19,6 +19,7 @@ int main(void)
 	printf("-----------------s\n");
 	TEST("%s", "ryojiro");
 
+	TEST("%s", "");
 	TEST("%.s", "ryojiro");
 	TEST("%.s", str);
 	TEST("%.0s", "ryojiro");
