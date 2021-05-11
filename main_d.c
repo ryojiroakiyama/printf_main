@@ -1,6 +1,7 @@
 #include "../ft_printf.h"
 #include <stdio.h>
 
+
 #define TEST(args...)						\
 do {										\
 	int	ft = ft_printf(args);				\
@@ -90,7 +91,11 @@ int main(void)
 	TEST("%*d", 0, -123);
 	TEST("abc%010dabc", -123);
 	TEST("a%010d%*db%-1dc", 5, 123, 5, 65);
-
+/*
+	TEST("%214748d", 123);
+	TEST("%.214748d", 123);
+	TEST("%*.*d", 214748, 214748, 123);
+*/
 	printf("-------------------undefined behavior\n");
 	TEST("%-010.5d", 123);//compile said ignore one of flag
 	TEST("%0-10.5d", 123);
@@ -105,6 +110,5 @@ int main(void)
 	TEST("%.-5d", 123);
 	TEST("%10*.42d", 5, 123);
 	TEST("%10.5", 123);
-
 	return (0);
 }
