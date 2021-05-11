@@ -52,8 +52,13 @@ int main(void)
 
 	TEST("%3.0s", str);
 	TEST("%10.0s", "ryojiro");
-
-//	TEST("%10%");
+	
+	char s1[3];
+	s1[0] = '0';
+	s1[1] = '1';
+	s1[2] = '2';
+	TEST("%10.6s", s1);
+	TEST("%10.2s", s1);
 
 	printf("------------------undefined behavoir\n");
 	TEST("%0s", "ryojiro");//recognized as flag 0 and flag 0 is undefined
