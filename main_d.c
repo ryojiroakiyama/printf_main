@@ -52,6 +52,8 @@ int main(void)
 	TEST("%0000000000010.5d", 123);
 	TEST("%010.5d", 123);
 
+	printf("-----------------multiple\n");
+	TEST("%dakiyama%d%dryojiro%d", 123, 54, -53, 524443);
 /*
 	TEST("%.*d", -1, 0);
 	TEST("%*.*d", 10, -3, 123);

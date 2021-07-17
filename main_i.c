@@ -51,6 +51,8 @@ int main(void)
 	TEST("%0000000000010.5i", 123);
 	TEST("%010.5i", 123);
 
+	printf("-----------------multiple\n");
+	TEST("%iakiyama%i%iryojiro%i", 123, 54, -53, 524443);
 /*
 	TEST("%.*i", -1, 0);
 	TEST("%*.*i", 10, -3, 123);

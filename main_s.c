@@ -42,6 +42,9 @@ int main(void)
 	TEST("%10.5s", "ryojiro");
 	TEST("%10.15s", "ryojiro");
 
+	printf("-----------------multiple\n");
+	TEST("%saaaaa%s%saaaa%s", "first", "middle1", "middle2", "last");
+
 /*
 	TEST("%.*s", -1, str);
 	TEST("%3s", str);

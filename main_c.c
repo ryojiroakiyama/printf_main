@@ -32,6 +32,9 @@ int main(void)
 	TEST("%-10c", 'x');
 	TEST("%------------10c", 'x');
 
+	printf("-----------------multiple\n");
+	TEST("%caaaaa%c%caaaa%c", 'x', 'y', 'z', '~');
+
 /*
 	printf("-----------------star\n");
 	TEST("%*c", 0, 'x');

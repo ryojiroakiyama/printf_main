@@ -14,7 +14,8 @@ do {										\
 
 int main(void)
 {
-	printf("-----------------multiple\n");
+	int a;
 
+	TEST("%ca%sb%pc%dd%ie%uf%xg%Xh%%", 'z', "string", &a, -42, 422, 0, 12, -4444444);
 	return (0);
 }

@@ -40,7 +40,7 @@ per:
 	${CC} ${NAME} main_percent.c
 	./a.out
 mult:
-	${CC} ${NAME} main_multiple.c
+	${CC} ${NAME} main_mult_conv.c
 	./a.out
 
 clean:

@@ -31,6 +31,14 @@ int main(void)
 	printf("-----------------'-'flag\n");
 	TEST("%-20p", &pnt);
 	TEST("%------------20p", &pnt);
+
+	char first;
+	char *middle;
+	int *middle2;
+	int last;
+	printf("-----------------multiple\n");
+	TEST("%pakiyama%p%pryojiro%p", &first, middle, middle2, &last);
+
 /*
 	TEST("%*p", 0, &pnt);
 	TEST("%*p", -1, &pnt);
