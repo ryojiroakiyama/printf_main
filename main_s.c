@@ -16,10 +16,16 @@ int main(void)
 {
 	char *str = NULL;
 
-	printf("-----------------s\n");
+	printf("-----------------normal\n");
 	TEST("%s", "ryojiro");
-
 	TEST("%s", "");
+
+	printf("-----------------field\n");
+	TEST("%1s", "ryojiro");
+	TEST("%10s", "ryojiro");
+	TEST("%10s", str);
+	
+	printf("-----------------'.'flag\n");
 	TEST("%.s", "ryojiro");
 	TEST("%.s", str);
 	TEST("%.0s", "ryojiro");
@@ -27,18 +33,16 @@ int main(void)
 	TEST("%.10s", "ryojiro");
 	TEST("%.10s", str);
 
-	printf("-----------------------\n");
-	TEST("%1s", "ryojiro");
-	TEST("%10s", "ryojiro");
-	TEST("%10s", str);
+	printf("-----------------'-'flag\n");
+	TEST("%-10.5s", "ryojiro");
+	TEST("%------------10.5s", "ryojiro");
+
+	printf("-----------------------'.'and'-'flag\n");
 	TEST("%10.3s", "ryojiro");
 	TEST("%10.5s", "ryojiro");
 	TEST("%10.15s", "ryojiro");
 
-	TEST("%-10.5s", "ryojiro");
-	TEST("%------------10.5s", "ryojiro");
-
-
+/*
 	TEST("%.*s", -1, str);
 	TEST("%3s", str);
 	TEST("%3.3s", str);
@@ -64,6 +68,6 @@ int main(void)
 	printf("------------------undefined behavoir\n");
 	TEST("%0s", "ryojiro");//recognized as flag 0 and flag 0 is undefined
 	TEST("%010.5s", "ryojiro");
-
+*/
 	return (0);
 }

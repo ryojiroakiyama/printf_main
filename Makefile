@@ -6,7 +6,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-all:d
+all:
+	${MAKE} -C ../
+
+bonsu:
+	${MAKE} -C ../ bonus
 
 c:
 	${CC} ${NAME} main_c.c
@@ -33,7 +37,10 @@ lx:
 	${CC} ${NAME} main_lx.c
 	./a.out
 per:
-	${CC} ${NAME} main_per.c
+	${CC} ${NAME} main_percent.c
+	./a.out
+mult:
+	${CC} ${NAME} main_multiple.c
 	./a.out
 
 clean:

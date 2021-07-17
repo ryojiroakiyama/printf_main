@@ -14,22 +14,24 @@ do {										\
 
 int main(void)
 {
-	int ret;
 	int	pnt;
 
-	printf("-----------------p\n");
+	printf("-----------------normal\n");
 	TEST("%p", &pnt);
+	TEST("%p", NULL);
 
-	TEST("%.p", &pnt);
-
+	printf("-----------------field\n");
 	TEST("%1p", &pnt);
 	TEST("%12p", &pnt);
 
+	printf("-----------------'.'flag\n");
+	TEST("%.p", &pnt);
 	TEST("%5.p", &pnt);
 
+	printf("-----------------'-'flag\n");
 	TEST("%-20p", &pnt);
 	TEST("%------------20p", &pnt);
-
+/*
 	TEST("%*p", 0, &pnt);
 	TEST("%*p", -1, &pnt);
 	TEST("%*p", -5, &pnt);
@@ -48,6 +50,6 @@ int main(void)
 	TEST("%.1p", &pnt);
 	TEST("%.20p", &pnt);
 	TEST("%..p", &pnt);
-
+*/
 	return (0);
 }
